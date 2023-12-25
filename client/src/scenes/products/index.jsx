@@ -1,6 +1,4 @@
-import { useState } from "react";
-// import { Navigate, Route, Routes } from "react-router-dom";
-// import { Layout } from "scenes/layout";
+import React, { useState } from "react";
 import {
   Box,
   Card,
@@ -35,13 +33,12 @@ const Product = ({
         backgroundImage: "none",
         backgroundColor: theme.palette.background.alt,
         borderRadius: "0.55rem",
-        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
       }}
     >
       <CardContent>
         <Typography
           sx={{ fontSize: 14 }}
-          color="theme.pallete.secondary[700]"
+          color={theme.palette.secondary[700]}
           gutterBottom
         >
           {category}
@@ -49,11 +46,12 @@ const Product = ({
         <Typography variant="h5" component="div">
           {name}
         </Typography>
-        <Typography sx={{ mb: "1.5rem" }} color="theme.pallete.secondary[400]">
+        <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
           ${Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
-        <Typography variant="body2"> {description}</Typography>
+
+        <Typography variant="body2">{description}</Typography>
       </CardContent>
       <CardActions>
         <Button
@@ -65,10 +63,12 @@ const Product = ({
         </Button>
       </CardActions>
       <Collapse
-        unmountOnExit
         in={isExpanded}
         timeout="auto"
-        sx={{ color: theme.pallete.neutral[300] }}
+        unmountOnExit
+        sx={{
+          color: theme.palette.neutral[300],
+        }}
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
@@ -84,14 +84,15 @@ const Product = ({
     </Card>
   );
 };
+
 const Products = () => {
-  const { data, isloading } = useGetProductsQuery();
+  const { data, isLoading } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
-  console.log(data);
+
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="Products" subtitle="See your list of products." />
-      {data || isloading ? (
+      <Header title="PRODUCTS" subtitle="See your list of products." />
+      {data || !isLoading ? (
         <Box
           mt="20px"
           display="grid"
@@ -131,7 +132,6 @@ const Products = () => {
       ) : (
         <>Loading...</>
       )}
-      ;
     </Box>
   );
 };
