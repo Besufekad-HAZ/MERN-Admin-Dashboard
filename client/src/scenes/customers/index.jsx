@@ -6,7 +6,6 @@ import { ConstructionOutlined } from "@mui/icons-material";
 const Customers = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetCustomersQuery();
-  console.log("data", data);
 
   const columns = [
     {
