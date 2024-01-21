@@ -69,3 +69,13 @@ export const getTransactions = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+
+export const getGeopraphy = async (req, res) => {
+  try {
+    const users = await User.find({ role: "user" });
+
+    const mappedLocations = users.reduce()
+
+  }
+}
