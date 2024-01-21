@@ -71,7 +71,7 @@ export const getTransactions = async (req, res) => {
   }
 };
 
-export const getGeopraphy = async (req, res) => {
+export const getGeography = async (req, res) => {
   try {
     const users = await User.find({ role: "user" });
 
