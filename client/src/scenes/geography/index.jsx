@@ -20,6 +20,39 @@ const Geography = () => {
         {data ? (
           <ResponsiveChoropleth
             data={data}
+            theme={{
+              axis: {
+                domain: {
+                  line: {
+                    stroke: theme.palette.secondary[200],
+                  },
+                },
+                legend: {
+                  text: {
+                    fill: theme.palette.secondary[200],
+                  },
+                },
+                ticks: {
+                  line: {
+                    stroke: theme.palette.secondary[200],
+                    strokeWidth: 1,
+                  },
+                  text: {
+                    fill: theme.palette.secondary[200],
+                  },
+                },
+                legends: {
+                  text: {
+                    fill: theme.palette.secondary[200],
+                  },
+                },
+                tooltip: {
+                  container: {
+                    background: theme.palette.primary.main,
+                  },
+                },
+              },
+            }}
             features={geoData.features}
             margin={{ top: 0, right: 0, bottom: 0, left: -50 }}
             colors="nivo"
