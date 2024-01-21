@@ -10,7 +10,7 @@ const Geography = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="Geography" subtitle="Find where your users are located." />
+      <Header title="GEOGRAPHY" subtitle="See where your users are located." />
       <Box
         mt="40px"
         height="75vh"
@@ -41,22 +41,21 @@ const Geography = () => {
                     fill: theme.palette.secondary[200],
                   },
                 },
-                legends: {
-                  text: {
-                    fill: theme.palette.secondary[200],
-                  },
+              },
+              legends: {
+                text: {
+                  fill: theme.palette.secondary[200],
                 },
-                tooltip: {
-                  container: {
-                    background: theme.palette.primary.main,
-                  },
+              },
+              tooltip: {
+                container: {
+                  color: theme.palette.primary.main,
                 },
               },
             }}
             features={geoData.features}
             margin={{ top: 0, right: 0, bottom: 0, left: -50 }}
-            colors="nivo"
-            domain={[0, 1000000]}
+            domain={[0, 60]}
             unknownColor="#666666"
             label="properties.name"
             valueFormat=".2s"
