@@ -23,7 +23,6 @@ import {
   Toolbar,
   useTheme,
 } from "@mui/material";
-import App from "App";
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
   const dispatch = useDispatch();
