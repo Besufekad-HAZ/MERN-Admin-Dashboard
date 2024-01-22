@@ -8,14 +8,14 @@ const OverallStatSchema = new mongoose.Schema(
     year: Number,
     monthlyData: [
       {
-        month: Number,
+        month: String,
         totalSales: Number,
         totalUnits: Number,
       },
     ],
     dailyData: [
       {
-        day: Number,
+        date: String,
         totalSales: Number,
         totalUnits: Number,
       },
@@ -28,5 +28,5 @@ const OverallStatSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Product = mongoose.model("OverallStat", OverallStatSchema);
-export default Product;
+const OverallStat = mongoose.model("OverallStat", OverallStatSchema);
+export default OverallStat;
