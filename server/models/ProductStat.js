@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const productstatSchema = new mongoose.Schema(
+const ProductStatSchema = new mongoose.Schema(
   {
     productId: String,
     yearlySalesTotal: Number,
@@ -13,15 +13,16 @@ const productstatSchema = new mongoose.Schema(
         totalUnits: Number,
       },
     ],
-    dailyData: {
-      month: String,
-      totalSales: Number,
-      totalUnits: Number,
-    },
+    dailyData: [
+      {
+        date: String,
+        totalSales: Number,
+        totalUnits: Number,
+      },
+    ],
   },
-
   { timestamps: true }
 );
 
-const ProductStat = mongoose.model("ProductStat", productstatSchema);
+const ProductStat = mongoose.model("ProductStat", ProductStatSchema);
 export default ProductStat;
