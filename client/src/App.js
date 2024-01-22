@@ -14,7 +14,7 @@ import Overview from "scenes/overview";
 import Daily from "scenes/daily";
 import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
-import Admin from "scenes/admins";
+import Admin from "scenes/admin";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
